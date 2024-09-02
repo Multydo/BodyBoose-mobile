@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:BodyBoost/Routes/AppPage.dart';
+import 'package:BodyBoost/Routes/AppRoute.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: Container(),
-      ),
-    )
-  );
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      initialRoute: AppRoute.login, // Set the initial route
+      getPages: AppPage.pages,
+    );
+  }
 }
